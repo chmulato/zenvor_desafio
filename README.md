@@ -40,18 +40,41 @@ Este projeto implementa a solução completa para o teste técnico localizado em
 
 ## Estrutura
 ```
-anagrama-desafio/
-  pom.xml                                    # Maven config (Java 11, JUnit 5)
-  README.md                                  # Este arquivo
+zenvor_desafio/
+  pom.xml                                      # Config Maven (Java 11, JUnit 5)
+  README.md                                    # Documentação principal
   doc/
-    teste.txt                                # Enunciado original do teste técnico
-    teste_anagramas.md                       # Especificação detalhada
+    teste.txt                                  # Enunciado original (anagramas)
+    teste_anagramas.md                         # Especificação detalhada do teste de anagramas
+    dse_test.md                                # Enunciado dos exercícios complementares (DSE Test)
+    solucao.md                                 # Análise detalhada da solução + respostas exercícios
+    dominio.md                                 # Informações de domínio estruturadas
+    solucao.docx                               # Export DOCX da solução
+    dse_test.docx                              # Export DOCX do enunciado DSE
+  target/                                      # Artefatos de build (gerado pelo Maven)
+    zen-anagramas-solution.jar                 # Artefato gerado (v1.0.0)
   src/
     main/java/com/zenvor/mulato/desafio/
-      AnagramGenerator.java                  # Implementação principal
-      AnagramDemo.java                       # Demonstração prática
+      AnagramGenerator.java                    # Gerador de anagramas (backtracking)
+      AnagramDemo.java                         # Execução demonstrativa
+      Person.java                              # Exemplo equals/hashCode por CPF
+      NotificationManager.java                 # Desacoplamento via Strategy de EmailService
+      UserService.java                         # Integração repositório + envio de notificação
+      UserDao.java                             # Exemplo de uso seguro (PreparedStatement)
+      BatchProcessor.java                      # Simulação de processo batch (diagnóstico)
+      SqlExercise.java                         # Lógica simulando consultas SQL do enunciado
+      PlantManager.java                        # Gestão de plantas (regras e permissões)
+      UserManager.java                         # Gestão de usuários (validações e permissões)
     test/java/com/zenvor/mulato/desafio/
-      AnagramGeneratorTest.java              # 5 testes unitários JUnit
+      AnagramGeneratorTest.java                # Testes do gerador de anagramas
+      PersonTest.java                          # Testes equals/hashCode
+      NotificationManagerTest.java             # Testes de desacoplamento
+      UserServiceTest.java                     # Testes de integração simples
+      UserDaoTest.java                         # Testes de prevenção SQL injection / mocks
+      BatchProcessorTest.java                  # Testes do processo batch
+      SqlExerciseTest.java                     # Testes das consultas simuladas
+      PlantManagerTest.java                    # Testes das regras de plantas
+      UserManagerTest.java                     # Testes das regras de usuários
 ```
 
 ## Executando
